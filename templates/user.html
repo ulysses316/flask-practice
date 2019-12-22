@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    {% if user %}
+        <h1>Hola {{user|capitalize}}!</h1>
+        <p>Hola soy <strong>{{user|capitalize}}</strong> y esta es mi historia.</p>
+    {% else %}
+        <h1>Hola extraño</h1>
+        <p>Esta historia no existe y jamas existira</p>
+    {% endif %}
+
+    <ul>
+    {% for elemento in lista %}
+            <li>{{elemento}}</li>
+    {% endfor %}
+    </ul>
+
+    {% macro render_list(elem) %}
+        <h1>Saludos<em><i>{{user}}</i></em> es un placer conocerlo</h1>
+    {% endmacro %}
+    {{render_list(user)}}
+</body>
+</html>
